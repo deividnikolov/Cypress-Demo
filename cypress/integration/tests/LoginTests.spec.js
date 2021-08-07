@@ -24,7 +24,7 @@ describe("Login Tests Sauce Demo Labs", () => {
         "Epic sadface: Username and password do not match any user in this service"
       );
   });
-  it.only("should logout", () => {
+  it("should logout", () => {
     loginPage.login("standard_user", "secret_sauce");
     loginPage.clickLogoutButton();
     cy.get(".login_logo").should("be.visible");
