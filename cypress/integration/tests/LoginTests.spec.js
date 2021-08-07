@@ -10,7 +10,7 @@ describe("Login Tests", () => {
     cy.url().should("include", "saucedemo");
   });
 
-  it("should login with valid credentials ", () => {
+  it("should be able to login with valid credentials ", () => {
     loginPage.login("standard_user", "secret_sauce");
     inventoryPage.verifyTitleExist();
   });
