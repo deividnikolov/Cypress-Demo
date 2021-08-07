@@ -2,7 +2,7 @@
 import loginPage, { login } from "../../../page-objects/login-Page";
 import inventoryPage from "../../../page-objects/inventory-Page";
 
-describe("Login Tests", () => {
+describe("Login Tests Sauce Demo Labs", () => {
   beforeEach(() => {
     cy.viewport(1280, 720);
     cy.log("Opening the website");
