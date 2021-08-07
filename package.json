@@ -1,0 +1,31 @@
+{
+  "name": "cypress-framework",
+  "version": "1.0.0",
+  "description": "Sauce Labs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "cypress:open": "cypress open"
+  },
+  "keywords": [
+    "e2e",
+    "tests",
+    "cypress",
+    "automation",
+    "framework"
+  ],
+  "author": "David Nikolov",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^8.1.0"
+  }
+}
+
+    
+  
+
+
+
+  
+ 
+

@@ -1,0 +1,15 @@
+
+    {
+
+      "retries": 1,
+        "chromeWebSecurity": false,
+          "env":{
+            "url": "https://www.saucedemo.com/"
+
+          }
+
+
+
+
+      }
+
