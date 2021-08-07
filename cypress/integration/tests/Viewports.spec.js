@@ -27,7 +27,7 @@ describe("Login Page Logo On Mobile", () => {
     macVersions.forEach((version) => {
       it(`Should display login logo on  ${version}`, () => {
         cy.viewport(version);
-        cy.get(".login_logo").should("exist");
+        cy.get(".login_logo").should("be.visible");
       });
     });
   });
