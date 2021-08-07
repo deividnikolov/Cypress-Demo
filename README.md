@@ -1,1 +1,3 @@
-# Pacticing Cypress
+# Cypress-Demo
+- Practicing Cypress
+
