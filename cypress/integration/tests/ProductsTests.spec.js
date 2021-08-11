@@ -13,8 +13,9 @@ describe("Products Tests", () => {
     should("include", "saucedemo");
     loginPage.
     login("standard_user", "secret_sauce");
+
   });
-  
+
   it("should add Back Pack to cart and check the price", () => {
     inventoryPage.addBackPackToCart();
     inventoryPage.goToCart();
@@ -23,6 +24,7 @@ describe("Products Tests", () => {
       .and("have.length", 1);
     cy.get(".inventory_item_price")
     .should("have.text", "$29.99");
+
   });
 
   it("should add Bike Light to cart and check the price", () => {
@@ -33,6 +35,7 @@ describe("Products Tests", () => {
       .and("have.length", 1);
     cy.get(".inventory_item_price")
     .should("have.text", "$9.99");
+
   });
 
   it("should add Bolt T-Shirt to cart and check the price", () => {
@@ -43,6 +46,7 @@ describe("Products Tests", () => {
       .and("have.length", 1);
     cy.get(".inventory_item_price")
     .should("have.text", "$15.99");
+
   });
 
   it("should add Fleece Jacket to cart and check the price", () => {
@@ -53,6 +57,7 @@ describe("Products Tests", () => {
       .and("have.length", 1);
     cy.get(".inventory_item_price")
     .should("have.text", "$49.99");
+
   });
 
   it("should add Onesie to cart and check the price", () => {
@@ -63,6 +68,7 @@ describe("Products Tests", () => {
     and("have.length", 1);
     cy.get(".inventory_item_price")
     .should("have.text", "$7.99");
+
   });
 
   it(" should add The Test All Thigns T-Shirt and check the price", () => {
@@ -73,6 +79,7 @@ describe("Products Tests", () => {
       .and("have.length", 1);
     cy.get(".inventory_item_price")
     .should("have.text", "$15.99");
+
   });
 
   it("should be able to remove an item from the cart", () => {
@@ -81,6 +88,7 @@ describe("Products Tests", () => {
     cartPage.removeCartItem();
     cy.contains("Sauce Labs Backpack")
     .should("not.exist");
+    
   });
 
   it("should be able to checkout", () => {

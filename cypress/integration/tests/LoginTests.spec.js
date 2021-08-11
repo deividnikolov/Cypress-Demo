@@ -9,11 +9,13 @@ describe("Login Tests Sauce Demo Labs", () => {
     cy.visit(Cypress.env("url"));
     cy.url()
     .should("include", "saucedemo");
+
   });
 
   it("should be able to login with valid credentials ", () => {
     loginPage.login("standard_user", "secret_sauce");
     inventoryPage.verifyTitleExist();
+
   });
 
   it("should not be able to login with invalid credentials", () => {
@@ -25,14 +27,16 @@ describe("Login Tests Sauce Demo Labs", () => {
         "have.text",
         "Epic sadface: Username and password do not match any user in this service"
       );
+
   });
-  
+
   it("should logout", () => {
     loginPage.
     login("standard_user", "secret_sauce");
     loginPage.clickLogoutButton();
     cy.get(".login_logo")
     .should("be.visible");
+
   });
 
   it("should not be able to login with locked_out_user", () => {
@@ -44,12 +48,14 @@ describe("Login Tests Sauce Demo Labs", () => {
         "have.text",
         "Epic sadface: Sorry, this user has been locked out."
       );
+
   });
 
   it("should login with performance glitch user", () => {
     loginPage.
     login("performance_glitch_user", "secret_sauce");
     inventoryPage.verifyTitleExist();
+
   });
 
   it("should have the correct image color", () => {
@@ -61,6 +67,7 @@ describe("Login Tests Sauce Demo Labs", () => {
       "color",
       "rgb(0, 0, 238)"
     );
+
   });
 
   it("The product image should have the correct width", () => {
@@ -69,6 +76,7 @@ describe("Login Tests Sauce Demo Labs", () => {
     cy.get("#item_4_img_link > .inventory_item_img")
       .should("have.css", "width")
       .and("eq", "186.75px");
+
   });
 
   it("The product image should have the correct height", () => {
