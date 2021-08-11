@@ -88,7 +88,7 @@ describe("Products Tests", () => {
     cartPage.removeCartItem();
     cy.contains("Sauce Labs Backpack")
     .should("not.exist");
-    
+
   });
 
   it("should be able to checkout", () => {
@@ -99,7 +99,8 @@ describe("Products Tests", () => {
     cy.contains("Sauce Labs Backpack")
       .should("be.visible")
       .and("have.length", 1);
-    cy.get(".item_pricebar").should("have.text", "$29.99");
+    cy.get(".item_pricebar").
+    should("have.text", "$29.99");
     personalInfoPage.clickFinishButton();
     cy.get(".complete-header")
     .should("be.visible");
