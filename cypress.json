@@ -3,10 +3,10 @@
 
       "retries": 1,
         "chromeWebSecurity": false,
-          "env":{
-            "url": "https://www.saucedemo.com/"
+        "video": false,
+            "baseUrl": "https://www.saucedemo.com/"
 
-          }
+          
 
 
 

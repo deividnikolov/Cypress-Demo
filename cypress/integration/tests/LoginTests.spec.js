@@ -6,7 +6,7 @@ describe("Login Tests Sauce Demo Labs", () => {
   beforeEach(() => {
     cy.viewport(1280, 720);
     cy.log("Opening the website");
-    cy.visit(Cypress.env("url"));
+    cy.visit('/');
     cy.url()
     .should("include", "saucedemo");
 

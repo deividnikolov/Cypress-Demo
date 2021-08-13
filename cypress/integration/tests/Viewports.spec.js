@@ -16,7 +16,7 @@ describe("Login Page Logo On Mobile", () => {
   phoneModels.forEach((model) => {
     it(`Should display logo on ${model} screen`, () => {
       cy.viewport(model);
-      cy.visit(Cypress.env("url"));
+      cy.visit('/');
       cy.get(".login_logo").should("be.visible");
     });
   });
