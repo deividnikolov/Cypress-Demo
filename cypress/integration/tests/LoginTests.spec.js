@@ -4,9 +4,12 @@ import inventoryPage from "../../../page-objects/inventory-Page";
 
 describe("Login Tests Sauce Demo Labs", () => {
   beforeEach(() => {
-    cy.viewport(1280, 720);
-    cy.log("Opening the website");
-    cy.visit('/');
+    cy
+      .viewport(1280, 720);
+    cy
+      .log("Opening the website");
+    cy
+      .visit('/');
     cy.url()
     .should("include", "saucedemo");
 
@@ -34,7 +37,8 @@ describe("Login Tests Sauce Demo Labs", () => {
     loginPage.
     login("standard_user", "secret_sauce");
     loginPage.clickLogoutButton();
-    cy.get(".login_logo")
+    cy
+      .get(".login_logo")
     .should("be.visible");
 
   });
@@ -61,7 +65,8 @@ describe("Login Tests Sauce Demo Labs", () => {
   it("should have the correct image color", () => {
     loginPage.
     login("problem_user", "secret_sauce");
-    cy.get("#item_4_img_link > .inventory_item_img")
+   cy
+    .get("#item_4_img_link > .inventory_item_img")
     .should(
       "have.css",
       "color",
@@ -82,7 +87,8 @@ describe("Login Tests Sauce Demo Labs", () => {
   it("The product image should have the correct height", () => {
     loginPage.
     login("standard_user", "secret_sauce");
-    cy.get("#item_4_img_link > .inventory_item_img")
+    cy
+      .get("#item_4_img_link > .inventory_item_img")
       .should("have.css", "height")
       .and("eq", "237.4375px");
 
