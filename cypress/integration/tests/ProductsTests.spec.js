@@ -6,11 +6,14 @@ import personalInfoPage from "../../../page-objects/personal-Info-Page";
 
 describe("Products Tests", () => {
   beforeEach(() => {
-    cy.viewport(1280, 720);
-    cy.log("Opening the website");
-    cy.visit('/');
-    cy.url().
-    should("include", "saucedemo");
+    cy
+      .viewport(1280, 720);
+    cy
+      .log("Opening the website");
+    cy
+      .visit('/');
+    cy.url()
+      .should("include", "saucedemo");
     loginPage.
     login("standard_user", "secret_sauce");
 
@@ -19,21 +22,25 @@ describe("Products Tests", () => {
   it("should add Back Pack to cart and check the price", () => {
     inventoryPage.addBackPackToCart();
     inventoryPage.goToCart();
-    cy.contains("Sauce Labs Backpack")
+    cy
+      .contains("Sauce Labs Backpack")
       .should("be.visible")
       .and("have.length", 1);
-    cy.get(".inventory_item_price")
-    .should("have.text", "$29.99");
+    cy
+     .get(".inventory_item_price")
+     .should("have.text", "$29.99");
 
   });
 
   it("should add Bike Light to cart and check the price", () => {
     inventoryPage.addBikeLightToCart();
     inventoryPage.goToCart();
-    cy.contains("Sauce Labs Bike Light")
+    cy
+      .contains("Sauce Labs Bike Light")
       .should("be.visible")
       .and("have.length", 1);
-    cy.get(".inventory_item_price")
+    cy
+      .get(".inventory_item_price")
     .should("have.text", "$9.99");
 
   });
@@ -41,10 +48,12 @@ describe("Products Tests", () => {
   it("should add Bolt T-Shirt to cart and check the price", () => {
     inventoryPage.addBoltTshirtToCart();
     inventoryPage.goToCart();
-    cy.contains("Sauce Labs Bolt T-Shirt")
+    cy
+      .contains("Sauce Labs Bolt T-Shirt")
       .should("be.visible")
       .and("have.length", 1);
-    cy.get(".inventory_item_price")
+    cy
+      .get(".inventory_item_price")
     .should("have.text", "$15.99");
 
   });
@@ -52,10 +61,12 @@ describe("Products Tests", () => {
   it("should add Fleece Jacket to cart and check the price", () => {
     inventoryPage.addFleeceJacketToCart();
     inventoryPage.goToCart();
-    cy.contains("Sauce Labs Fleece Jacket")
+    cy
+      .contains("Sauce Labs Fleece Jacket")
       .should("be.visible")
       .and("have.length", 1);
-    cy.get(".inventory_item_price")
+    cy
+      .get(".inventory_item_price")
     .should("have.text", "$49.99");
 
   });
@@ -74,10 +85,12 @@ describe("Products Tests", () => {
   it(" should add The Test All Thigns T-Shirt and check the price", () => {
     inventoryPage.addAllTheThingShirtToCart();
     inventoryPage.goToCart();
-    cy.contains("Test.allTheThings() T-Shirt (Red)")
+    cy
+      .contains("Test.allTheThings() T-Shirt (Red)")
       .should("be.visible")
       .and("have.length", 1);
-    cy.get(".inventory_item_price")
+    cy
+      .get(".inventory_item_price")
     .should("have.text", "$15.99");
 
   });
@@ -86,7 +99,8 @@ describe("Products Tests", () => {
     inventoryPage.addBackPackToCart();
     inventoryPage.goToCart();
     cartPage.removeCartItem();
-    cy.contains("Sauce Labs Backpack")
+    cy
+    .contains("Sauce Labs Backpack")
     .should("not.exist");
 
   });
@@ -96,13 +110,16 @@ describe("Products Tests", () => {
     inventoryPage.goToCart();
     cartPage.clickCheckoutButton();
     personalInfoPage.fillOutPersonalInfo("David", "Nikolov", "2400");
-    cy.contains("Sauce Labs Backpack")
+    cy
+      .contains("Sauce Labs Backpack")
       .should("be.visible")
       .and("have.length", 1);
-    cy.get(".item_pricebar").
+    cy
+      .get(".item_pricebar").
     should("have.text", "$29.99");
     personalInfoPage.clickFinishButton();
-    cy.get(".complete-header")
+    cy
+     .get(".complete-header")
     .should("be.visible");
 
   });
