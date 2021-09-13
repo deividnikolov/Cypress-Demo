@@ -1,7 +1,7 @@
 
     {
 
-      "retries": 1,
+      "retries": 0,
         "chromeWebSecurity": false,
         "video": false,
             "baseUrl": "https://www.saucedemo.com/"

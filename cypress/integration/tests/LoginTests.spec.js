@@ -4,23 +4,29 @@ import inventoryPage from "../../../page-objects/inventory-Page";
 
 describe("Login Tests Sauce Demo Labs", () => {
   beforeEach(() => {
-    cy.viewport(1280, 720);
-    cy.log("Opening the website");
-    cy.visit('/');
-    cy.url()
-    .should("include", "saucedemo");
+    cy
+    .viewport(1280, 720);
+    cy
+    .log("Opening the website");
+    cy
+    .visit('/');
+    cy
+    .url()
+    .should(
+      "include", "saucedemo");
 
   });
 
   it("should be able to login with valid credentials ", () => {
-    loginPage.login("standard_user", "secret_sauce");
+    loginPage.login(
+      "standard_user", "secret_sauce");
     inventoryPage.verifyTitleExist();
 
   });
 
   it("should not be able to login with invalid credentials", () => {
-    loginPage.
-    login("wrongUsername ", "wrongPassword");
+    loginPage.login(
+      "wrongUsername ", "wrongPassword");
     loginPage.elements
       .errorMessage()
       .should(
@@ -31,17 +37,19 @@ describe("Login Tests Sauce Demo Labs", () => {
   });
 
   it("should logout", () => {
-    loginPage.
-    login("standard_user", "secret_sauce");
+    loginPage.login(
+      "standard_user", "secret_sauce");
     loginPage.clickLogoutButton();
-    cy.get(".login_logo")
-    .should("be.visible");
+    cy
+    .get(".login_logo")
+    .should(
+      "be.visible");
 
   });
 
   it("should not be able to login with locked_out_user", () => {
-    loginPage.
-    login("locked_out_user", "secret_sauce");
+    loginPage.login(
+      "locked_out_user", "secret_sauce");
     loginPage.elements
       .errorMessage()
       .should(
@@ -52,16 +60,17 @@ describe("Login Tests Sauce Demo Labs", () => {
   });
 
   it("should login with performance glitch user", () => {
-    loginPage.
-    login("performance_glitch_user", "secret_sauce");
+    loginPage.login(
+      "performance_glitch_user", "secret_sauce");
     inventoryPage.verifyTitleExist();
 
   });
 
   it("should have the correct image color", () => {
-    loginPage.
-    login("problem_user", "secret_sauce");
-    cy.get("#item_4_img_link > .inventory_item_img")
+    loginPage. login(
+      "problem_user", "secret_sauce");
+    cy
+    .get("#item_4_img_link > .inventory_item_img")
     .should(
       "have.css",
       "color",
@@ -71,20 +80,22 @@ describe("Login Tests Sauce Demo Labs", () => {
   });
 
   it("The product image should have the correct width", () => {
-    loginPage.
-    login("standard_user", "secret_sauce");
-    cy.get("#item_4_img_link > .inventory_item_img")
-      .should("have.css", "width")
-      .and("eq", "186.75px");
+    loginPage.login(
+      "standard_user", "secret_sauce");
+    cy
+    .get("#item_4_img_link > .inventory_item_img")
+    .should("have.css", "width")
+    .and("eq", "186.75px");
 
   });
 
   it("The product image should have the correct height", () => {
-    loginPage.
-    login("standard_user", "secret_sauce");
-    cy.get("#item_4_img_link > .inventory_item_img")
-      .should("have.css", "height")
-      .and("eq", "237.4375px");
+    loginPage.login(
+      "standard_user", "secret_sauce");
+    cy
+    .get("#item_4_img_link > .inventory_item_img")
+    .should("have.css", "height")
+    .and("eq", "237.4375px");
 
   });
 });

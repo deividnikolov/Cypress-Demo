@@ -15,19 +15,31 @@ const phoneModels = [
 describe("Login Page Logo On Mobile", () => {
   phoneModels.forEach((model) => {
     it(`Should display logo on ${model} screen`, () => {
-      cy.viewport(model);
-      cy.visit('/');
-      cy.get(".login_logo").should("be.visible");
+      cy
+      .viewport(model);
+      cy
+      .visit('/');
+      cy
+      .get(".login_logo")
+      .should("be.visible");
     });
   });
 
-  const macVersions = ["macbook-11", "macbook-13", "macbook-15", "macbook-16"];
+  const macVersions = [
+    "macbook-11",
+    "macbook-13",
+    "macbook-15",
+    "macbook-16"
+  ];
 
   describe("Login Page Logo On Desktop", () => {
     macVersions.forEach((version) => {
       it(`Should display login logo on  ${version}`, () => {
-        cy.viewport(version);
-        cy.get(".login_logo").should("be.visible");
+        cy
+        .viewport(version);
+        cy
+        .get(".login_logo")
+        .should("be.visible");
       });
     });
   });

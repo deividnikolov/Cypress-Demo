@@ -18,14 +18,9 @@
   "license": "ISC",
   "devDependencies": {
     "cypress": "^8.1.0"
+  },
+  "dependencies": {
+    "axe-core": "^4.3.2",
+    "cypress-axe": "^0.13.0"
   }
 }
-
-    
-  
-
-
-
-  
- 
-
