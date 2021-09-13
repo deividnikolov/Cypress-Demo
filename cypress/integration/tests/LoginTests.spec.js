@@ -14,13 +14,6 @@ describe("Login Tests Sauce Demo Labs", () => {
     .url()
     .should(
       "include", "saucedemo");
-      .viewport(1280, 720);
-    cy
-      .log("Opening the website");
-    cy
-      .visit('/');
-    cy.url()
-    .should("include", "saucedemo");
 
   });
 
@@ -51,8 +44,6 @@ describe("Login Tests Sauce Demo Labs", () => {
     .get(".login_logo")
     .should(
       "be.visible");
-      .get(".login_logo")
-    .should("be.visible");
 
   });
 
@@ -76,13 +67,9 @@ describe("Login Tests Sauce Demo Labs", () => {
   });
 
   it("should have the correct image color", () => {
-<<<<<<< HEAD
     loginPage. login(
       "problem_user", "secret_sauce");
     cy
-    loginPage.
-    login("problem_user", "secret_sauce");
-   cy
     .get("#item_4_img_link > .inventory_item_img")
     .should(
       "have.css",
@@ -109,12 +96,6 @@ describe("Login Tests Sauce Demo Labs", () => {
     .get("#item_4_img_link > .inventory_item_img")
     .should("have.css", "height")
     .and("eq", "237.4375px");
-    loginPage.
-    login("standard_user", "secret_sauce");
-    cy
-      .get("#item_4_img_link > .inventory_item_img")
-      .should("have.css", "height")
-      .and("eq", "237.4375px");
 
   });
 });

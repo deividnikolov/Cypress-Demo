@@ -15,13 +15,6 @@ describe("Products Tests", () => {
     cy
     .url()
     .should("include", "saucedemo");
-      .viewport(1280, 720);
-    cy
-      .log("Opening the website");
-    cy
-      .visit('/');
-    cy.url()
-      .should("include", "saucedemo");
     loginPage.
     login("standard_user", "secret_sauce");
 
@@ -38,12 +31,6 @@ describe("Products Tests", () => {
     .get(".inventory_item_price")
     .should(
       "have.text", "$29.99");
-      .contains("Sauce Labs Backpack")
-      .should("be.visible")
-      .and("have.length", 1);
-    cy
-     .get(".inventory_item_price")
-     .should("have.text", "$29.99");
 
   });
 
@@ -58,12 +45,6 @@ describe("Products Tests", () => {
     .get(".inventory_item_price")
     .should(
       "have.text", "$9.99");
-      .contains("Sauce Labs Bike Light")
-      .should("be.visible")
-      .and("have.length", 1);
-    cy
-      .get(".inventory_item_price")
-    .should("have.text", "$9.99");
 
   });
 
@@ -78,12 +59,6 @@ describe("Products Tests", () => {
     .get(".inventory_item_price")
     .should(
       "have.text", "$15.99");
-      .contains("Sauce Labs Bolt T-Shirt")
-      .should("be.visible")
-      .and("have.length", 1);
-    cy
-      .get(".inventory_item_price")
-    .should("have.text", "$15.99");
 
   });
 
@@ -98,12 +73,6 @@ describe("Products Tests", () => {
     .get(".inventory_item_price")
     .should(
       "have.text", "$49.99");
-      .contains("Sauce Labs Fleece Jacket")
-      .should("be.visible")
-      .and("have.length", 1);
-    cy
-      .get(".inventory_item_price")
-    .should("have.text", "$49.99");
 
   });
 
@@ -132,12 +101,6 @@ describe("Products Tests", () => {
     .get(".inventory_item_price")
     .should(
       "have.text", "$15.99");
-      .contains("Test.allTheThings() T-Shirt (Red)")
-      .should("be.visible")
-      .and("have.length", 1);
-    cy
-      .get(".inventory_item_price")
-    .should("have.text", "$15.99");
 
   });
 
@@ -149,7 +112,6 @@ describe("Products Tests", () => {
     .contains("Sauce Labs Backpack")
     .should(
       "not.exist");
-    .should("not.exist");
 
   });
 
@@ -172,39 +134,27 @@ describe("Products Tests", () => {
       "be.visible");
 
   });
-  it('should not be able to checkout with only firstname',() => {
+  it('should not be able to checkout with only firstname added',() => {
     inventoryPage.addBackPackToCart();
     inventoryPage.goToCart();
     cartPage.clickCheckoutButton();
     personalInfoPage.enterFirstName('David');
     personalInfoPage.clickContinue();
-    loginPage.elements
-     .errorMessage()
-     .should('have.text','Error: Last Name is required')
+    loginPage.elements.errorMessage()
+     .should('have.text', 'Error: Last Name is required')
      .and(
       'have.css',
       'color',
       'rgb(255, 255, 255)');
-      .contains("Sauce Labs Backpack")
-      .should("be.visible")
-      .and("have.length", 1);
-    cy
-      .get(".item_pricebar").
-    should("have.text", "$29.99");
-    personalInfoPage.clickFinishButton();
-    cy
-     .get(".complete-header")
-    .should("be.visible");
 
   });
-  it('should not be able to checkout with only lastname',() => {
+  it('should not be able to checkout with only lastname added',() => {
     inventoryPage.addBackPackToCart();
     inventoryPage.goToCart();
     cartPage.clickCheckoutButton();
     personalInfoPage.enterLastName('Nikolov');
     personalInfoPage.clickContinue();
-    loginPage.elements
-     .errorMessage()
+    loginPage.elements.errorMessage()
      .should('have.text','Error: First Name is required')
      .and(
       'have.css',
@@ -218,8 +168,7 @@ describe("Products Tests", () => {
       personalInfoPage.enterFirstName('David');
       personalInfoPage.enterLastName('Nikolov');
       personalInfoPage.clickContinue();
-      loginPage.elements
-       .errorMessage()
+      loginPage.elements.errorMessage()
        .should('have.text' , 'Error: Postal Code is required')
        .and(
         'have.css',
