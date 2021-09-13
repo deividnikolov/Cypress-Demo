@@ -95,7 +95,7 @@ describe("Login Tests Sauce Demo Labs", () => {
     cy
     .get("#item_4_img_link > .inventory_item_img")
     .should("have.css", "height")
-    .and("eq", "237.4375px");
+    .and("eq", "237.4375px"); 
 
   });
 });
