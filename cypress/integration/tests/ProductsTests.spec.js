@@ -134,6 +134,7 @@ describe("Products Tests", () => {
       "be.visible");
 
   });
+  
   it('should not be able to checkout with only firstname added',() => {
     inventoryPage.addBackPackToCart();
     inventoryPage.goToCart();
@@ -148,6 +149,7 @@ describe("Products Tests", () => {
       'rgb(255, 255, 255)');
 
   });
+  
   it('should not be able to checkout with only lastname added',() => {
     inventoryPage.addBackPackToCart();
     inventoryPage.goToCart();
@@ -160,7 +162,9 @@ describe("Products Tests", () => {
       'have.css',
       'color',
       'rgb(255, 255, 255)');
+    
      });
+  
      it('should not be able to checkout without postalcode',() => {
       inventoryPage.addBackPackToCart();
       inventoryPage.goToCart();
@@ -174,5 +178,7 @@ describe("Products Tests", () => {
         'have.css',
         'color',
         'rgb(255, 255, 255)');
-       });
+       
+     });
+  
 });
