@@ -3,8 +3,8 @@
 
       "retries": 0,
         "chromeWebSecurity": false,
-        "video": false,
-            "baseUrl": "https://www.saucedemo.com/"
+          "video": false,
+           "baseUrl": "https://www.saucedemo.com/"
 
           
 
